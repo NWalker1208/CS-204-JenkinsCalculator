@@ -59,7 +59,12 @@ class Calculator {
     if int a = 16 then this method returns: 10000
      */
     String intToBinaryNumber(int n){
-        return null;
+        StringBuilder stringBuilder = new StringBuilder();
+        do {
+            stringBuilder.insert(0, n % 2);
+            n /= 2;
+        } while (n != 0);
+        return stringBuilder.toString();
     }
 
     /*
