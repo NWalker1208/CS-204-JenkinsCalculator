@@ -70,13 +70,13 @@ pipeline {
                 sh "docker rmi $registry:$BUILD_NUMBER"
             }
         }
+    }
 
-        post {
-            failure {
-                mail to: 'nathan.walker@byu.edu',
-                subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-                body: "Something is wrong with ${env.BUILD_URL}"
-            }
+    post {
+        failure {
+            mail to: 'nathan.walker@byu.edu',
+            subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+            body: "Something is wrong with ${env.BUILD_URL}"
         }
     }
 }
