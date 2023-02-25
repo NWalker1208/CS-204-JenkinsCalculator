@@ -1,4 +1,4 @@
 from openjdk
-COPY ./src/mail/java/*.java /
+COPY ./src/main/java/*.java /
 RUN javac /Calculator.java
 ENTRYPOINT ["java"]
